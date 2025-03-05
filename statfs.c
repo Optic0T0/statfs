@@ -55,7 +55,7 @@ int main(void) {
         printf("mntonname:%s\n",mntbuf[i].f_mntonname);    /* directory on which mounted */
         printf("mntfromname:%s\n",mntbuf[i].f_mntfromname);    /* mounted file system */
         printf("mntfromspec:%s\n",mntbuf[i].f_mntfromspec);    /* special for mount request */
-        if (strcmp(mntbuf[i].f_fstypename, "ffs") == 0) { //check for ufs it points to ffs.
+        if (strcmp(mntbuf[i].f_fstypename, MOUNT_FFS) == 0) { //check for ufs it points to ffs.
             puts("----------Start mount_info.ufs_args (aka ffs)-------------");
             //Data seem to be garbage. Why and what would they be?
             printf("ex_spec:%p\n", mntbuf[i].mount_info.ufs_args.fspec);
